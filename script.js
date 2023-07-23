@@ -6,6 +6,7 @@ function getComputerChoice(listChoice) {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == "rock" && computerSelection == "paper"){
         return("You Lose! Paper beats Rock.")
+        console.log("does it work now?")
     } else if (playerSelection == "paper" && computerSelection == "scissors"){
         return("You Lose! Scissors beat Paper.")
     } else if (playerSelection == "scissors" && computerSelection == "rock"){
