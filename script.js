@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+
 function getComputerChoice(listChoice) {
     return listChoice[Math.floor(Math.random()*listChoice.length)];
 
@@ -38,12 +39,11 @@ function game(){
     const listChoice = ["rock", "paper", "scissors"];
     let ans = true;
     while (ans) {
-        let playerSelection;
         
         const buttons = Array.from(document.querySelectorAll('button'));
         buttons.forEach(button => button.addEventListener('click', () => {
             if (playerScore < 5 && computerScore < 5) {
-                playerSelection = button.textContent;
+                let playerSelection = button.textContent;
                 playerSelection = playerSelection.toLowerCase();
                 console.log(playerSelection);
                 let computerSelection = getComputerChoice(listChoice);
@@ -65,9 +65,7 @@ function game(){
 
         
         ans = confirm("Another round?");
-        if (ans == false) {
-            break
-        }
+        
     } 
 } 
 
