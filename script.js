@@ -34,25 +34,41 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function computerDisplay(computerSelection) {
+    var img = document.createElement("img");
+    const computerChoiceContainer = document.querySelector(".computerchoice");
+    
+    if (computerSelection == "rock") {
+        img.src = "rock.png";
+    } else if (computerSelection == "paper") {
+        img.src = "paper.png";
+    } else {
+        img.src = "scissors.png";
+    }
+    while (computerChoiceContainer.firstChild) {
+        computerChoiceContainer.removeChild(computerChoiceContainer.firstChild);
+    }
+    
+    computerChoiceContainer.appendChild(img);
+}
+
 
 function game(){
     const listChoice = ["rock", "paper", "scissors"];
-    let ans = true;
-    while (ans) {
-        
-        const buttons = Array.from(document.querySelectorAll('button'));
-        buttons.forEach(button => button.addEventListener('click', () => {
+    const buttons = Array.from(document.querySelectorAll("button"));
+    buttons.forEach(button => button.addEventListener('click', () => {
             if (playerScore < 5 && computerScore < 5) {
-                let playerSelection = button.textContent;
-                playerSelection = playerSelection.toLowerCase();
+                let playerSelection = button.value;
                 console.log(playerSelection);
                 let computerSelection = getComputerChoice(listChoice);
+                computerDisplay(computerSelection);
                 document.querySelector('.result').textContent = playRound(playerSelection, computerSelection);
-                document.querySelector('.score').textContent = `${playerScore} : ${computerScore}`;
+                document.querySelector('.score').textContent = `${computerScore} : ${playerScore}`;
             
             }
             if (playerScore == 5 || computerScore == 5) {
                 buttons.forEach(button => button.disabled = true);
+                var ans;
                 if (playerScore > computerScore) {
                     document.querySelector('.result').textContent = "Game over. You win!";
                 } else if (playerScore < computerScore) {
@@ -60,14 +76,26 @@ function game(){
                 } else {
                     document.querySelector('.result').textContent = "Game over. It's a draw.";
                 }
+                
+                setTimeout(() => {
+                    var ans = confirm("Another round?");
+                    
+                    if (ans) {
+                        playerScore = 0;
+                        computerScore = 0;
+                        buttons.forEach(button => button.disabled = false);
+                        document.querySelector('.score').textContent = `${playerScore} : ${computerScore}`;
+                        document.querySelector('.result').textContent = "RESULT";
+                    }
+                }, 100); // Delay in milliseconds
             }   
         }));
 
         
-        ans = confirm("Another round?");
+        
         
     } 
-} 
+
 
 
 game()

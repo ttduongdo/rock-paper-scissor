@@ -4,14 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button>ROCK</button>
-    <button>PAPER</button>
-    <button>SCISSORS</button>
+    <header>
+        <div class="title">Tic - Tac - Toe</div>
+        <div class="subtitle">Score 5 first to win</div>
+    </header>
+    
+    <main>
+        <div class="computer">
+            <div class="player">AI player</div>
+            <div class="computerchoice"></div>
+        </div>
+        <div class="you">
+            <div class="player">YOU</div>
+            <div class="buttons">
+                <button value="rock"><img  src="rock.png" alt="rock"/></button>
+                <button value="paper"><img  src="paper.png" alt="paper"/></button>
+                <button value="scissors"><img  src="scissors.png" alt="scissors"/></button>
+            </div>
+        </div>
+    </main>
+    
+    
+    <div class="display">
+        <div class="result">RESULT</div>
+        <div class="score">SCORE</div>
+    </div>
 
-    <div class="result" style="font-size: 50px; font-family: Arial; margin: auto"">RESULT</div>
-    <div class="score" style="font-size: 50px; font-family: Arial; margin: auto"">SCORE</div>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Tic-Tac-Toe by Duong Do. All rights reserved.</p>
+            <a href="https://www.flaticon.com/free-icons/letter-v" title="icons">Icons created by Freepik - Flaticon</a>
+        </div>
+    </footer>
 <script src="script.js"></script>
 </body>
 </html>

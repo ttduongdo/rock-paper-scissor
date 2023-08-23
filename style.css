@@ -1,0 +1,120 @@
+/* GENERAL STYLING */
+html {
+    box-sizing: border-box;
+    --dark: gray;
+    --light: whitesmoke;
+    --primary-font: 'Bricolage Grotesque', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+* {
+    background-color: var(--light);
+    margin: 0;
+    padding: 0;
+}
+body {
+    max-width: 1300px;
+    margin: 0px auto;
+    font-family: var(--primary-font);
+    height: auto;
+    display: block;
+}
+
+/* HEADER STYLING */
+
+header {
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
+    font-family: var(--primary-font);
+}
+
+.title {
+    font-size: 70px;
+    font-weight: 500;
+}
+.subtitle {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* GAME STYLING */
+main {
+    width: 1300px;
+    margin: 100px auto;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+main > div {
+    width: 600px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid black;
+}
+
+.computerchoice {
+    margin-top: 50px ;
+}
+
+.player {
+    font-family: var(--primary-font);
+    font-size: 80px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+
+}
+img {
+    width: 150px;
+    height: 150px;
+
+}
+button {
+    width: 200px;
+    height: 200px;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: transparent;
+    transition: 0.1s;
+
+}
+
+button:hover {
+   transform: scale(1.2);
+}
+
+/* RESULT DISPLAY STYLING */
+
+.display {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.result {
+    font-size: 50px; 
+}
+
+.score {
+    font-size: 50px; 
+}
+
+/* Footer Styles */
+.footer {
+    color: var(--dark);
+    padding: 10px 0;
+    text-align: left;
+}
